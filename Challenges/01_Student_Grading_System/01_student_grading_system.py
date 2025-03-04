@@ -20,10 +20,14 @@ if myScore >= 90:
 elif myScore >= 80 and myScore < 90:
     print ("Grade: B")
 
-#
+# If the score is between 70 and 79, print: `"Grade: C"`
 elif myScore >= 70 and myScore < 80:
     print ("Grade: C")
+
+# If the score is between 60 and 69, print: `"Grade: D"`
 elif myScore >= 60:
     print ("Grade: D")
+
+#If the score is below 60, print: `"Grade: F"`
 else:
     print("Grade:F")
