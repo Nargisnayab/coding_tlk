@@ -4,7 +4,7 @@
 #			   work in Python
 #
 # Author:      Mr. Nargis
-# Created:     27-Feb-2025
+# Created:     27-feb-2025
 # Updated:     27-Feb-2025
 #-----------------------------------------------------------------------------
 
