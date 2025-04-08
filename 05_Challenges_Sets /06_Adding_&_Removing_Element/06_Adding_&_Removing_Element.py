@@ -13,4 +13,3 @@ letters.discard('b')
 
 # Output: {'a', 'c', 'd', 'e', 'f'}
 print(letters)
-

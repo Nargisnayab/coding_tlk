@@ -16,15 +16,3 @@ print("After pop" ,data)
 # Using clear to empty the set and print it
 data.clear()
 print("After clear" , data)
-
-
-
-
-
-
-
-
-
-
-
-
