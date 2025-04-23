@@ -7,7 +7,7 @@
 # Updated:     20-March-2025
 # -----------------------------------------------------------------------------
 # Creating the grocery list
-grocery_list = [      'apples', 'bread', 'milk', 'eggs', ' cheese', 'tomatoes' ]
+grocery_list = ['apples', 'bread', 'milk', 'eggs', ' cheese', 'tomatoes']
 # Adding new items
 grocery_list.append("cheese")
 grocery_list.append("tomatoes")
