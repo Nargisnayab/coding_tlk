@@ -13,7 +13,7 @@ def check_turn(turn):
     return 'X' if turn % 2 else 'O'
 
 # Check for winner
-def check_for_win(board):
+    def check_for_win(board):
     wins = [(1,2,3), (4,5,6), (7,8,9), (1,4,7), (2,5,8), (3,6,9), (1,5,9), (3,5,7)]
     for a, b, c in wins:
         if board[a] == board[b] == board[c]:
@@ -26,10 +26,6 @@ playing, complete = True, False
 turn = 0
 prev_turn = -1
 
-# Game Loop
-while playing:
-    os.system('cls' if os.name == 'nt' else 'clear')
-    draw_board(spots)
 
     if prev_turn == turn:
         print("Invalid spot selected, please pick another.")
@@ -51,9 +47,7 @@ while playing:
     if turn > 8:
         playing = False
 
-# Final board display
-os.system('cls' if os.name == 'nt' else 'clear')
-draw_board(spots)
+
 
 # Show result
 if complete:

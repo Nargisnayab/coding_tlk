@@ -1,43 +1,62 @@
-# Module 1: Addition
-def add(a, b):
-    return a + b
+# Draw the board
+def draw_board(spots):
+    board = (
+        f"\n|{spots[1]}|{spots[2]}|{spots[3]}|\n"
+        f"|{spots[4]}|{spots[5]}|{spots[6]}|\n"
+        f"|{spots[7]}|{spots[8]}|{spots[9]}|\n"
+    )
+    print(board)
 
-# Module 2: Subtraction
-def subtract(a, b):
-    return a - b
+# Alternate turns
+def check_turn(turn):
+    return 'X' if turn % 2 else 'O'
 
-# Module 3: Multiplication
-def multiply(a, b):
-    return a * b
+# Check for winner
+def check_for_win(board):
+    wins = [(1,2,3), (4,5,6), (7,8,9), (1,4,7), (2,5,8), (3,6,9), (1,5,9), (3,5,7)]
+    for a, b, c in wins:
+        if board[a] == board[b] == board[c]:
+            return True
+    return False
 
-# Module 4: Division
-def divide(a, b):
-    if b != 0:
-        return a / b
-    else:
-        return "Error: Division by zero"
+# Game variables
+spots = {i: str(i) for i in range(1, 10)}
+playing, complete = True, False
+turn = 0
+prev_turn = -1
 
-# Module 5: Display results
-def display_result(operation, result):
-    print(f"The result of {operation} is: {result}")
+# Game Loop
+while playing:
+    os.system('cls' if os.name == 'nt' else 'clear')
+    draw_board(spots)
 
-# Main program using modular functions
-def main():
-    x = 10
-    y = 5
+    if prev_turn == turn:
+        print("Invalid spot selected, please pick another.")
+    prev_turn = turn
 
-    # Reusing functions
-    result1 = add(x, y)
-    display_result("addition", result1)
+    print(f"Player {(turn % 2) + 1}'s turn: Pick your spot or press q to quit")
+    choice = input()
 
-    result2 = subtract(x, y)
-    display_result("subtraction", result2)
+    if choice == 'q':
+        playing = False
+    elif choice.isdigit() and int(choice) in spots:
+        if spots[int(choice)] not in {"X", "O"}:
+            turn += 1
+            spots[int(choice)] = check_turn(turn)
 
-    result3 = multiply(x, y)
-    display_result("multiplication", result3)
+    if check_for_win(spots):
+        playing, complete = False, True
 
-    result4 = divide(x, y)
-    display_result("division", result4)
+    if turn > 8:
+        playing = False
 
-# Run the program
-main()
+# Final board display
+os.system('cls' if os.name == 'nt' else 'clear')
+draw_board(spots)
+
+# Show result
+if complete:
+    winner = "Player 1" if check_turn(turn) == 'X' else "Player 2"
+    print(f"{winner} wins!")
+else:
+    print("It's a tie!")
