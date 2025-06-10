@@ -1,13 +1,16 @@
 import random
 
 # List of words to choose from
-word_list = ['python', 'hangman', 'challenge', 'programming', 'developer']
+word_list = ['python', 'hangman', 'challenge', 'programming', 'developer' , 'games' ,'teacher','student','school',
+             'electricity', 'donkey', 'hardware', 'xerox', 'transistor', 'computer', 'desktop','engineering',
+             'hangman', 'circuit', 'imagination']
 
 # Choose a random word
 word = random.choice(word_list).lower()
 guessed_letters = set()
 correct_letters = set(word)
-tries = 6
+tries = 8
+
 
 print("Welcome to Hangman!")
 print("_ " * len(word))
