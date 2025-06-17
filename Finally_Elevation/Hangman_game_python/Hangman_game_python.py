@@ -1,3 +1,10 @@
+# Purpose Name : Hangman game
+# purpose: Create a games
+# Creator: NN
+# Date: 4-jun-2025
+#____________________________________________________________
+
+
 import random
 
 # List of words to choose from
@@ -22,7 +29,7 @@ while tries > 0 and correct_letters != guessed_letters:
     if not guess.isalpha() or len(guess) != 1:
         print("Please enter a single alphabetical letter.")
         continue
-
+# guessing the letters
     if guess in guessed_letters:
         print("You've already guessed that letter.")
         continue
